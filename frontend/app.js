@@ -34,11 +34,33 @@ function hideControls() {
 
 function showRoomControls() {
     document.getElementById('controls').style.display = 'flex';
+    document.getElementById("ingame_toggle").style.display = 'none';
 }
 
 function showPotControls() {
     document.getElementById('pot-controls').style.display = 'block';
+    document.getElementById("ingame_toggle").style.display = 'block';
 }
+
+function hidePotControls(){
+    document.getElementById('pot-controls').style.display = 'none';
+}
+
+function toggleShowAllControls() {
+    toggleShowControls();
+    toggleShowPotControls();
+}
+
+function toggleShowControls(){
+    const controls = document.getElementById('controls');
+    controls.style.display = controls.style.display === 'none' ? 'flex' : 'none';
+}
+
+function toggleShowPotControls(){
+    const potControls = document.getElementById('pot-controls');
+    potControls.style.display = potControls.style.display === 'none' ? 'block' : 'none';
+}
+
 
 async function connectWallet() {
     if (window.ethereum) {
@@ -160,12 +182,14 @@ function setupSocketListeners() {
         gameStarted = false;
         
         updatePotValue();
+        hidePotControls();
 
         // Se o jogador for o vencedor, exibe o botão para sacar o pote
         if (data.signature && data.roomId) {
             winnerSignature = data.signature;
             currentRoomId = data.roomId;
             document.getElementById('claimPotBtn').style.display = 'block';
+
         }
     });
 

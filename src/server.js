@@ -68,20 +68,25 @@ function loadRoomsFromFile() {
 }
 
 function checkWinner(room, roomId) {
-    if (room.chess.isGameOver()) {
-        const winnerColor = room.chess.turn() === 'w' ? 'black' : 'white';
-        const winnerIndex = winnerColor === 'white' ? 0 : 1;
-        const winnerAddress = room.players[winnerIndex].address;
-
-        generateSignature(roomId, winnerAddress).then(signature => {
-            io.to(room.players[winnerIndex].socket.id).emit('gameEnd', {
-                winner: winnerColor,
-                signature,
-                roomId
+    try {
+        if (room.chess.isGameOver()) {
+            const winnerColor = room.chess.turn() === 'w' ? 'black' : 'white';
+            const winnerIndex = winnerColor === 'white' ? 0 : 1;
+            const winnerAddress = room.players[winnerIndex].address;
+    
+            generateSignature(roomId, winnerAddress).then(signature => {
+                io.to(room.players[winnerIndex].socket?.id).emit('gameEnd', {
+                    winner: winnerColor,
+                    signature,
+                    roomId
+                });
             });
-        });
-
-        io.to(roomId).emit('gameEnd', { winner: winnerColor });
+    
+            io.to(roomId).emit('gameEnd', { winner: winnerColor });
+        }
+    } catch (error) {
+        console.log(error);
+        
     }
 }
 

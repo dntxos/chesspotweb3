@@ -39,13 +39,15 @@ h1, h3 {
 
 #walletStatus {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .controls {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .create-room, .join-room {

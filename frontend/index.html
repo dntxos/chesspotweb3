@@ -38,8 +38,12 @@
             <button onclick="addToPot()">Adicionar ao Pote</button>
             <p id="potValue">Valor do Pote: ...</p>
         </div>
+        
+        <button id="ingame_toggle" onclick="toggleShowPotControls()" style="display: none;">
+            POT - Mostrar/Esconder
+        </button>
 
-        <div id="board" style="width: 400px; margin: 20px auto;"></div>
+        <div id="board" style="width: 300px; margin: 20px auto;"></div>
         <p id="status">Aguardando ação...</p>
         <button id="claimPotBtn" style="display: none;" onclick="claimPot()">Sacar Pote</button>
     </div>

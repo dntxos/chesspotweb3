@@ -60,5 +60,15 @@
         "address": "0xa235378718A5b1962cC87C330e654fFF20f07A9A"
       }
     ]
+  },
+  "abc": {
+    "password": "abc",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "players": [
+      {
+        "playerId": "0xa235378718A5b1962cC87C330e654fFF20f07A9A",
+        "address": "0xa235378718A5b1962cC87C330e654fFF20f07A9A"
+      }
+    ]
   }
 }
