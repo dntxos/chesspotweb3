@@ -44,6 +44,7 @@ function showPotControls() {
 
 function hidePotControls(){
     document.getElementById('pot-controls').style.display = 'none';
+    document.getElementById("titleh1").style.display = 'none';
 }
 
 function toggleShowAllControls() {
@@ -53,12 +54,25 @@ function toggleShowAllControls() {
 
 function toggleShowControls(){
     const controls = document.getElementById('controls');
-    controls.style.display = controls.style.display === 'none' ? 'flex' : 'none';
+    const isDisplayed = controls.style.display === 'flex';
+
+    if (isDisplayed) {
+        hideControls();
+    }
+    else {
+        showRoomControls();
+    }
 }
 
 function toggleShowPotControls(){
     const potControls = document.getElementById('pot-controls');
-    potControls.style.display = potControls.style.display === 'none' ? 'block' : 'none';
+    const isDisplayed = potControls.style.display === 'block';
+
+    if (isDisplayed) {
+        hidePotControls();
+    } else {
+        showPotControls();
+    }
 }
 
 
