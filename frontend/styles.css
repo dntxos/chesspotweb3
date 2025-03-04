@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap');
+
+body {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #34495e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #f1c40f;
+}
+
+.wallet-controls button {
+    background-color: #e67e22;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.wallet-controls button:hover {
+    background-color: #d35400;
+}
+
+#walletStatus {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.create-room, .join-room {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.create-room input, .join-room input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.create-room button, .join-room button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2ecc71;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-room button:hover, .join-room button:hover {
+    background-color: #27ae60;
+}
+
+.pot-controls {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.pot-controls input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.pot-controls button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pot-controls button:hover {
+    background-color: #2980b9;
+}
+
+#potValue {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+#board {
+    width: 400px;
+    margin: 20px auto;
+    border: 10px solid #8e44ad;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#status {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+#claimPotBtn {
+    padding: 10px 20px;
+    background-color: #f39c12;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#claimPotBtn:hover {
+    background-color: #e67e22;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    .create-room, .join-room {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+body {
+    background-image: url('path/to/chess-pattern.png');
+    background-repeat: repeat;
+}
+

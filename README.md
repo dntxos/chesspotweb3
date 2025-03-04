@@ -1,1 +1,1 @@
-# chesspotweb3
+# chess-pot-web3

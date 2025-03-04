@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xadrez Online com POT-WEB3-BNB</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Xadrez Online</h1>
+
+        <div class="wallet-controls">
+            <button onclick="connectWallet()">Conectar MetaMask</button>
+            <p id="walletStatus">Carteira: Não conectada</p>
+        </div>
+
+        <div class="controls" id="controls">
+            <div class="create-room">
+                <h3>Criar Sala</h3>
+                <input type="text" id="roomId" placeholder="ID da Sala">
+                <input type="password" id="password" placeholder="Senha (opcional)">
+                <button onclick="createRoom()">Criar</button>
+            </div>
+            <div class="join-room">
+                <h3>Entrar em Sala</h3>
+                <input type="text" id="joinRoomId" placeholder="ID da Sala">
+                <input type="password" id="joinPassword" placeholder="Senha">
+                <button onclick="joinRoom()">Entrar</button>
+            </div>
+        </div>
+
+        <div class="pot-controls" id="pot-controls" style="display: none;">
+            <h3>Gerenciar Pote</h3>
+            <input type="text" id="potAmount" placeholder="Quantidade BNB">
+            <button onclick="addToPot()">Adicionar ao Pote</button>
+            <p id="potValue">Valor do Pote: ...</p>
+        </div>
+
+        <div id="board" style="width: 400px; margin: 20px auto;"></div>
+        <p id="status">Aguardando ação...</p>
+        <button id="claimPotBtn" style="display: none;" onclick="claimPot()">Sacar Pote</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io@4.8.1/client-dist/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.5/ethers.umd.min.js" integrity="sha512-dj/EbePKIJrkhHMePgJ6ACP0v5whCZi+A8ot7WP+L0a3sPafqqWRiRhBBlGprs5hs5JjOYuTDlOic+qKc/s3mw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</body>
+</html>
