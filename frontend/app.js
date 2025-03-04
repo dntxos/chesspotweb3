@@ -161,6 +161,7 @@ function setupSocketListeners() {
     socket.on('playerColor', (color) => {
         playerColor = color;
         updateStatus(`Você é ${color === 'white' ? 'Brancas' : 'Pretas'}.`);
+        gameStarted = true;
     });
 
     socket.on('gameStart', (data) => {
